@@ -1,5 +1,5 @@
 ﻿#include <stdio.h>
-void confirm_1st(int answer, int my);
+int confirm_1st(int answer, int my);
 
 void main(void)
 {
@@ -13,7 +13,7 @@ void main(void)
 	}
 }
 
-void confirm_1st(int answer, int my)
+int confirm_1st(int answer, int my)
 {
 	if (answer == my)
 		return;
