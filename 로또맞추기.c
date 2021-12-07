@@ -1,10 +1,11 @@
 ﻿#include <stdio.h>
+
 int confirm_1st(int* answer, int* my);
 
 void main(void)
 {
 	// 로또번호(오름차순 정렬)
-	int answer_number[6] = { 2, 3, 8, 11, 15, 41 };
+	int answer_number[6] = { 2, 4, 8, 11, 15, 41 };
 	// 자신이 기입한 번호(오름차순 정렬)
 	int my_number[6] = { 2, 3, 8, 11, 15, 41 };
 
@@ -22,13 +23,23 @@ void main(void)
 // int confirm_1st(int answer, int my)
 int confirm_1st(int* answer, int* my)
 {
+	// *(answer+i)와 answer[i]와 같다
 	// HACK : answer와 my는 다른 공간에 할당되어 있음
 	// if (answer == my)
-	if (*answer == *my)
-		// HACK : 반환값이 존재하지 않음
-		// return;
-		return 1;
-	else
-		return 0;
+	for (int i = 0; i < 6; i++) {
+		if (answer[i] != my[i])
+			return 0;
+		else
+			return 1;
+	}
+	//int cnt = 0;
+	//for(int i = 0; i < 6; i++ {
+	//	if(answer[i] == my[i])
+	//		cnt++;
+	//	else
+	//		return 0;
+	//}
+	//if(cnt == 6)
+	//	return 1;
 }
 
